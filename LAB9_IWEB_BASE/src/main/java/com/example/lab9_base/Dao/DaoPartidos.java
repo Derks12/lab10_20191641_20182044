@@ -2,6 +2,7 @@ package com.example.lab9_base.Dao;
 
 import com.example.lab9_base.Bean.Arbitro;
 import com.example.lab9_base.Bean.Partido;
+import com.example.lab9_base.Bean.Seleccion;
 import com.example.lab9_base.Bean.SeleccionNacional;
 
 import java.sql.Connection;
@@ -21,9 +22,9 @@ public class DaoPartidos extends DaoBase {
             while(rs.next()){
                 Partido partido = new Partido();
                 partido.setIdPartido(rs.getInt(1));
-                partido.setSeleccionLocal((SeleccionNacional) rs.getObject(2));
-                partido.setSeleccionVisitante((SeleccionNacional) rs.getObject(3));
-                partido.setArbitro((Arbitro) rs.getObject(4));
+                partido.setSeleccionLocal(rs.getInt(2));
+                partido.setSeleccionVisitante(rs.getInt(3));
+                partido.setArbitro(rs.getInt(4));
                 partido.setFecha(rs.getString(5));
                 partido.setNumeroJornada(rs.getInt(6));
                 partidos.add(partido);

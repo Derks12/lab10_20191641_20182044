@@ -48,16 +48,17 @@
                     <th>Estadio a jugar</th>
                     <th>Árbitro</th>
                 </tr>
-                <%for (Partido partido:lista)%>
+                <%for (Partido partido:lista) {%>
                 <tr>
-                    <td><%Partido.getIdPartido()%></td>
-                    <td><%Partido.getnumeroJornada()%></td>
-                    <td><%Partido.getfecha()%></td>
-                    <td><%Partido.getseleccionLocal%></td>
-                    <td><%Partido.getseleccionVisitante%></td>
-                    <td><%Partido.getArbitro%></td>
-                    <td><%Partido.getseleccionLocal().getestadio().getnombre();  %></td>
+                    <td><%=Partido.getIdPartido()%></td>
+                    <td><%=Partido.getnumeroJornada()%></td>
+                    <td><%=Partido.getfecha()%></td>
+                    <td><%=Partido.getseleccionLocal%></td>
+                    <td><%=Partido.getseleccionVisitante%></td>
+                    <td><%=Partido.getArbitro%></td>
+                    <td><%=Partido.getseleccionLocal().getestadio().getnombre()%></td>
                 </tr>
+                <% } %>
 
             </table>
         </div>

@@ -1,10 +1,31 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="com.example.lab9_base.Bean.Partido" %>
+<%@ page import="java.util.ArrayList" %>
+<%
+    ArrayList<Partido> lista = (ArrayList<Partido>) request.getAttribute("lista");
+%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' />
         <title>LAB 9</title>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <a class="navbar-brand" href="#">Clasificatorias Sudamericanas Qatar 2022</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item" >
+                        <a class="nav-link" href="<%=request.getContextPath()%>/PartidoServlet">Partidos</a>
+                    </li>
+                    <li class="nav-item" >
+                        <a class="nav-link" href="<%=request.getContextPath()%>/ArbitroServlet">Arbitros</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </head>
     <body>
         <div class='container'>
@@ -26,15 +47,15 @@
                     <th>Estadio a jugar</th>
                     <th>Árbitro</th>
                 </tr>
-
+                <%for (Partido partido:lista)%>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><%Partido.getIdPartido()%></td>
+                    <td><%Partido.getfecha()%></td>
+                    <td><%Partido.getnumeroJornada()%></td>
+                    <td><%Partido.%></td>
+                    <td><%Partido.%></td>
+                    <td><%Partido.%></td>
+                    <td><%Partido.%></td>
                 </tr>
 
             </table>

@@ -28,6 +28,7 @@
         </nav>
     </head>
     <body>
+        <jsp:include page="includes/navbar.jsp"></jsp:include>
         <div class='container'>
             <div class="row mb-5 mt-4">
                 <div class="col-lg-6">

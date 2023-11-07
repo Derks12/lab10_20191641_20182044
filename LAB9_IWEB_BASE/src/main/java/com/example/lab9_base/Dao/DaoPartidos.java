@@ -14,7 +14,7 @@ public class DaoPartidos extends DaoBase {
     public ArrayList<Partido> listaDePartidos() {
 
         ArrayList<Partido> partidos = new ArrayList<>();
-        String sql = "select * from partidos";
+        String sql = "select * from partido";
         try (Connection conn = getConnection();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)){

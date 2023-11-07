@@ -51,12 +51,12 @@
                 <%for (Partido partido:lista)%>
                 <tr>
                     <td><%Partido.getIdPartido()%></td>
-                    <td><%Partido.getfecha()%></td>
                     <td><%Partido.getnumeroJornada()%></td>
-                    <td><%Partido.%></td>
-                    <td><%Partido.%></td>
-                    <td><%Partido.%></td>
-                    <td><%Partido.%></td>
+                    <td><%Partido.getfecha()%></td>
+                    <td><%Partido.getseleccionLocal%></td>
+                    <td><%Partido.getseleccionVisitante%></td>
+                    <td><%Partido.getArbitro%></td>
+                    <td><%Partido.getseleccionLocal().getestadio().getnombre();  %></td>
                 </tr>
 
             </table>

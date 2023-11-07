@@ -48,6 +48,7 @@
                     <th>Estadio a jugar</th>
                     <th>Árbitro</th>
                 </tr>
+<<<<<<< HEAD
                 <%for (Partido partido : lista){%>
                 <tr>
                     <td><%=partido.getIdPartido()%></td>

@@ -1,9 +1,33 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.example.lab9_base.Bean.Arbitro" %>
+<%@ page import="java.util.ArrayList" %>
+<%
+    ArrayList<Arbitro> lista = (ArrayList<Arbitro>) request.getAttribute("lista");
+%>
+
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'/>
         <title>LAB 9</title>
+
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <a class="navbar-brand" href="#">Clasificatorias Sudamericanas Qatar 2022</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item" >
+                        <a class="nav-link" href="<%=request.getContextPath()%>/PartidoServlet">Partidos</a>
+                    </li>
+                    <li class="nav-item" >
+                        <a class="nav-link" href="<%=request.getContextPath()%>/ArbitroServlet">Arbitros</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </head>
     <body>
         <div class='container'>
@@ -40,16 +64,18 @@
                     <th>Pais</th>
                     <th></th>
                 </tr>
+                <% for (Arbitro arbitro : lista) {%>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><%=arbitro.getIdArbitro()%></td>
+                    <td><%=arbitro.getNombre()%></td>
+                    <td><%=arbitro.getPais()%></td>
                     <td>
                         <a href="<%=request.getContextPath()%>/ArbitroServlet?action=borrar&id=">
                             Borrar
                         </a>
                     </td>
                 </tr>
+                <% } %>
             </table>
         </div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
